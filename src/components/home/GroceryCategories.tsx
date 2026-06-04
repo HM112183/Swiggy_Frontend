@@ -47,22 +47,22 @@ export default function FoodCategories() {
             <button
               onClick={scrollLeft}
               className="
-                          w-10
-                          h-10
-                          md:w-12
-                          md:h-12
-                          rounded-full
-                          bg-gray-200
-                          text-black
-                          flex
-                          items-center
-                          justify-center
-                          cursor-pointer
-                          hover:bg-gray-300
-                          active:bg-gray-400
-                          active:scale-95
-                          transition-all
-                          "
+                w-10
+                h-10
+                md:w-12
+                md:h-12
+                rounded-full
+                bg-gray-200
+                text-black
+                flex
+                items-center
+                justify-center
+                cursor-pointer
+                hover:bg-gray-300
+                active:bg-gray-400
+                active:scale-95
+                transition-all
+              "
               title="Scroll left"
               aria-label="Scroll left"
             >
@@ -71,22 +71,22 @@ export default function FoodCategories() {
             <button
               onClick={scrollRight}
               className="
-                          w-10
-                          h-10
-                          md:w-12
-                          md:h-12
-                          rounded-full
-                          bg-gray-200
-                          text-black
-                          flex
-                          items-center
-                          justify-center
-                          cursor-pointer
-                          hover:bg-gray-300
-                          active:bg-gray-400
-                          active:scale-95
-                          transition-all
-                          "
+                w-10
+                h-10
+                md:w-12
+                md:h-12
+                rounded-full
+                bg-gray-200
+                text-black
+                flex
+                items-center
+                justify-center
+                cursor-pointer
+                hover:bg-gray-300
+                active:bg-gray-400
+                active:scale-95
+                transition-all
+              "
               title="Scroll right"
               aria-label="Scroll right"
             >
@@ -98,29 +98,29 @@ export default function FoodCategories() {
         <div
           ref={sliderRef}
           className="
-flex
-gap-4
-md:gap-8
-overflow-x-auto
-scroll-smooth
-scrollbar-hide
-"
+            flex
+            gap-4
+            md:gap-8
+            overflow-x-auto
+            scroll-smooth
+            scrollbar-hide
+          "
         >
           {categories.map((category) => (
-<div
-  key={category.id}
-  className="
-  flex
-  flex-col
-  items-center
-  min-w-[120px]
-  md:min-w-[180px]
-  cursor-pointer
-  transition-all
-  duration-300
-  hover:scale-105
-"
->
+            <div
+              key={category.id}
+              className="
+                flex
+                flex-col
+                items-center
+                min-w-[120px]
+                md:min-w-[180px]
+                cursor-pointer
+                transition-all
+                duration-300
+                hover:scale-105
+              "
+            >
               <Image
                 src={category.image}
                 alt={category.name}
@@ -128,7 +128,9 @@ scrollbar-hide
                 height={140}
                 className="object-contain"
               />
-              <p className="text-base md:text-2xl mt-2 text-gray-800 text-center">{category.name}</p>
+              <p className="text-base md:text-2xl mt-2 text-gray-800 text-center">
+                {category.name}
+              </p>
             </div>
           ))}
         </div>

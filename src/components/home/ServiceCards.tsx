@@ -23,7 +23,6 @@ export default function ServiceCards() {
   return (
     <section className="max-w-[1200px] mx-auto mt-12 md:mt-16 px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
         {services.map((service) => (
           <div
             key={service.id}
@@ -50,32 +49,31 @@ export default function ServiceCards() {
             </div>
 
             <button
-            aria-label="View service details"
-            title="View service details"
-            className="
-            absolute
-            bottom-6
-            left-6
-            bg-[#ff5200]
-            text-white
-            w-12
-            h-12
-            md:w-14
-            md:h-14
-            rounded-full
-            flex
-            items-center
-            justify-center
-            cursor-pointer
-            hover:scale-105
-            transition-all
-            "
+              aria-label="View service details"
+              title="View service details"
+              className="
+                absolute
+                bottom-6
+                left-6
+                bg-[#ff5200]
+                text-white
+                w-12
+                h-12
+                md:w-14
+                md:h-14
+                rounded-full
+                flex
+                items-center
+                justify-center
+                cursor-pointer
+                hover:scale-105
+                transition-all
+              "
             >
               <FiArrowRight size={24} />
             </button>
           </div>
         ))}
-
       </div>
     </section>
   );

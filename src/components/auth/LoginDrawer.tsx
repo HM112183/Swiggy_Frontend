@@ -5,35 +5,20 @@ interface Props {
   onClose: () => void;
 }
 
-export default function LoginDrawer({
-  isOpen,
-  onClose,
-}: Props) {
+export default function LoginDrawer({ isOpen, onClose }: Props) {
   return (
     <>
       {isOpen && (
         <>
           {/* Overlay */}
-
           <div
             className="fixed inset-0 bg-black/50 z-40"
             onClick={onClose}
           />
 
           {/* Drawer */}
-
           <div
-            className="
-            fixed
-            right-0
-            top-0
-            h-screen
-            w-[420px]
-            bg-white
-            z-50
-            p-10
-            shadow-2xl
-            "
+            className="fixed right-0 top-0 h-screen w-[420px] bg-white z-50 p-10 shadow-2xl"
           >
             <button
               onClick={onClose}
@@ -53,46 +38,24 @@ export default function LoginDrawer({
             <input
               type="text"
               placeholder="Username"
-              className="
-                w-full
-                border
-                p-4
-                mb-4
-                outline-none
-                text-black
-                placeholder:text-gray-400
-                "
+              className="w-full border p-4 mb-4 outline-none text-black placeholder:text-gray-400"
             />
 
             <input
               type="password"
               placeholder="Password"
-                className="
-                w-full
-                border
-                p-4
-                mb-4
-                outline-none
-                text-black
-                placeholder:text-gray-400
-                "
+              className="w-full border p-4 mb-4 outline-none text-black placeholder:text-gray-400"
             />
 
-  <button
-  onClick={() => {
-    localStorage.setItem("loggedIn", "true");
-    window.location.reload();
-  }}
-  className="
-  w-full
-  bg-[#ff5200]
-  text-white
-  py-4
-  font-bold
-  "
->
-  LOGIN
-</button>
+            <button
+              onClick={() => {
+                localStorage.setItem("loggedIn", "true");
+                window.location.reload();
+              }}
+              className="w-full bg-[#ff5200] text-white py-4 font-bold"
+            >
+              LOGIN
+            </button>
 
             <p className="mt-6 text-sm">
               New User?{" "}

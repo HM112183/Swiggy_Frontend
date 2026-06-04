@@ -12,34 +12,34 @@ export default function Footer() {
   return (
     <footer className="bg-[#f0f0f5] mt-20">
       <div className="max-w-[1200px] mx-auto px-4 py-16">
-<div
-  className="
-  grid
-  grid-cols-2
-  lg:grid-cols-5
-  gap-8
-  lg:gap-12
-  items-start
-"
->
-{/* Logo */}
-<div className="col-span-2 lg:col-span-1 flex flex-col">
-  <div className="flex items-center gap-3">
-    <img
-      src="/footer/swiggy-logo.png"
-      alt="Swiggy"
-      className="w-12 h-12 object-contain"
-    />
+        <div
+          className="
+            grid
+            grid-cols-2
+            lg:grid-cols-5
+            gap-8
+            lg:gap-12
+            items-start
+          "
+        >
+          {/* Logo */}
+          <div className="col-span-2 lg:col-span-1 flex flex-col">
+            <div className="flex items-center gap-3">
+              <img
+                src="/footer/swiggy-logo.png"
+                alt="Swiggy"
+                className="w-12 h-12 object-contain"
+              />
 
-    <h1 className="text-[28px] md:text-[34px] font-bold text-[#ff5200] leading-none">
-      Swiggy
-    </h1>
-  </div>
+              <h1 className="text-[28px] md:text-[34px] font-bold text-[#ff5200] leading-none">
+                Swiggy
+              </h1>
+            </div>
 
-  <p className="mt-2 text-[16px] text-[#686b78] whitespace-nowrap">
-    © 2025 Swiggy Limited
-  </p>
-</div>
+            <p className="mt-2 text-[16px] text-[#686b78] whitespace-nowrap">
+              © 2025 Swiggy Limited
+            </p>
+          </div>
 
           {/* Company */}
           <div>
@@ -48,82 +48,96 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-gray-600">
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->About Us</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                About Us
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Swiggy Corporate</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Swiggy Corporate
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Careers</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Careers
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Team</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Team
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Swiggy One</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Swiggy One
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Swiggy Instamart</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Swiggy Instamart
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Swiggy Dineout</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Swiggy Dineout
+              </li>
             </ul>
           </div>
 
@@ -134,75 +148,87 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-gray-600 mb-8">
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Help & Support</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Help & Support
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Partner With Us</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Partner With Us
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Ride With Us</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Ride With Us
+              </li>
             </ul>
 
             <h3 className="text-[20px] font-bold text-[#02060c] mb-4">Legal</h3>
             <ul className="space-y-4 text-gray-600">
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Terms & Conditions</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Terms & Conditions
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Cookie Policy</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Cookie Policy
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Privacy Policy</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Privacy Policy
+              </li>
             </ul>
           </div>
 
@@ -213,86 +239,98 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-gray-600">
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Bangalore</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Bangalore
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Gurgaon</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Gurgaon
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Hyderabad</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Hyderabad
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Delhi</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Delhi
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Mumbai</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Mumbai
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Pune</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Pune
+              </li>
             </ul>
             <div className="mt-4">
               <select
                 aria-label="Available cities"
                 className="
-border
-rounded-xl
-px-4
-py-2
-bg-white
-cursor-pointer
-hover:border-[#ff5200]
-transition-all
-duration-300
-"
+                  border
+                  rounded-xl
+                  px-4
+                  py-2
+                  bg-white
+                  cursor-pointer
+                  hover:border-[#ff5200]
+                  transition-all
+                  duration-300
+                "
               >
                 <option>685 cities</option>
               </select>
@@ -306,38 +344,44 @@ duration-300
             </h3>
             <ul className="space-y-4 text-gray-600">
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Explore With Swiggy</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Explore With Swiggy
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Swiggy News</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Swiggy News
+              </li>
               <li
-  className="
-  cursor-pointer
-  hover:text-[#ff5200]
-  hover:translate-x-1
-  active:text-[#ff5200]
-  active:scale-90
-  transition-all
-  duration-300
-  "
->Snackables</li>
+                className="
+                  cursor-pointer
+                  hover:text-[#ff5200]
+                  hover:translate-x-1
+                  active:text-[#ff5200]
+                  active:scale-90
+                  transition-all
+                  duration-300
+                "
+              >
+                Snackables
+              </li>
             </ul>
 
             <h3 className="font-bold text-xl mt-10 mb-5 text-black">
@@ -355,63 +399,56 @@ duration-300
 
         {/* App Download Banner */}
         <div
-  className="
-  border-t
-  border-gray-300
-  mt-14
-  pt-8
-
-  flex
-  flex-col
-  lg:flex-row
-
-  items-center
-  justify-center
-
-  gap-6
-  lg:gap-10
-  "
->
+          className="
+            border-t
+            border-gray-300
+            mt-14
+            pt-8
+            flex
+            flex-col
+            lg:flex-row
+            items-center
+            justify-center
+            gap-6
+            lg:gap-10
+          "
+        >
           <h2
-  className="
-  text-2xl
-  md:text-[34px]
-  font-bold
-  text-[#3d4152]
-  text-center
-  "
->
+            className="
+              text-2xl
+              md:text-[34px]
+              font-bold
+              text-[#3d4152]
+              text-center
+            "
+          >
             For better experience, download the Swiggy app now
           </h2>
           <img
             src="/footer/app-store.png"
             alt="App Store"
             className="
-h-14
-md:h-16
-cursor-pointer
-
-hover:scale-105
-active:scale-90
-
-transition-all
-duration-300
-"
+              h-14
+              md:h-16
+              cursor-pointer
+              hover:scale-105
+              active:scale-90
+              transition-all
+              duration-300
+            "
           />
           <img
             src="/footer/google-play.png"
             alt="Google Play"
             className="
-h-14
-md:h-16
-cursor-pointer
-
-hover:scale-105
-active:scale-90
-
-transition-all
-duration-300
-"
+              h-14
+              md:h-16
+              cursor-pointer
+              hover:scale-105
+              active:scale-90
+              transition-all
+              duration-300
+            "
           />
         </div>
       </div>
