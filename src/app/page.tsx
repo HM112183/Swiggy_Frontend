@@ -11,7 +11,7 @@ import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
 <main className="bg-white">
-<div className="bg-[#ff5200] pb-20">
+<div className="bg-[#ff5200] pb-20 overflow-hidden">
   <Navbar />
   <Hero />
   <ServiceCards />

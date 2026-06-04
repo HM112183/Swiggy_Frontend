@@ -25,7 +25,8 @@ export default function DineoutCard({
   return (
 <div
   className="
-  w-[380px]
+  w-[280px]
+  md:w-[380px]
   shrink-0
   rounded-[24px]
   overflow-hidden
@@ -33,10 +34,15 @@ export default function DineoutCard({
   border
   border-gray-200
   shadow-lg
+  cursor-pointer
+  hover:border-[#ff5200]
   hover:shadow-2xl
+  hover:-translate-y-2
+  active:scale-[0.98]
+  active:shadow-md
   transition-all
   duration-300
-  hover:-translate-y-2
+  touch-manipulation
 "
 >
       <div className="relative">
@@ -44,12 +50,20 @@ export default function DineoutCard({
   src={image}
   alt={name}
   width={380}
-  height={260}
-  className="w-full h-[260px] object-cover transition-transform duration-500 hover:scale-105"
+  height={220}
+  className="
+w-full
+h-[180px]
+md:h-[260px]
+object-cover
+transition-transform
+duration-500
+hover:scale-105
+"
 />
 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
         <div className="absolute bottom-5 left-5 text-white z-10">
-          <h3 className="text-[20px] font-extrabold leading-tight">{name}</h3>
+          <h3 className="text-[18px] md:text-[20px] font-extrabold leading-tight">{name}</h3>
         </div>
 
         <div
@@ -72,7 +86,7 @@ export default function DineoutCard({
         </div>
       </div>
 
-      <div className="p-5 bg-white">
+      <div className="p-4 md:p-5 bg-white">
         <div className="flex justify-between text-gray-700">
           <span>{cuisine}</span>
           <span>{priceForTwo}</span>

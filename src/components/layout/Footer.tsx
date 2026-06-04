@@ -11,10 +11,19 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-[#f0f0f5] mt-20">
-      <div className="max-w-[1200px] mx-auto py-16">
-        <div className="grid grid-cols-5 gap-12 items-start">
+      <div className="max-w-[1200px] mx-auto px-4 py-16">
+<div
+  className="
+  grid
+  grid-cols-2
+  lg:grid-cols-5
+  gap-8
+  lg:gap-12
+  items-start
+"
+>
 {/* Logo */}
-<div className="flex flex-col">
+<div className="col-span-2 lg:col-span-1 flex flex-col">
   <div className="flex items-center gap-3">
     <img
       src="/footer/swiggy-logo.png"
@@ -22,7 +31,7 @@ export default function Footer() {
       className="w-12 h-12 object-contain"
     />
 
-    <h1 className="text-[34px] font-bold text-[#ff5200] leading-none">
+    <h1 className="text-[28px] md:text-[34px] font-bold text-[#ff5200] leading-none">
       Swiggy
     </h1>
   </div>
@@ -38,13 +47,83 @@ export default function Footer() {
               Company
             </h3>
             <ul className="space-y-4 text-gray-600">
-              <li>About Us</li>
-              <li>Swiggy Corporate</li>
-              <li>Careers</li>
-              <li>Team</li>
-              <li>Swiggy One</li>
-              <li>Swiggy Instamart</li>
-              <li>Swiggy Dineout</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>About Us</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Swiggy Corporate</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Careers</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Team</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Swiggy One</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Swiggy Instamart</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Swiggy Dineout</li>
             </ul>
           </div>
 
@@ -54,16 +133,76 @@ export default function Footer() {
               Contact us
             </h3>
             <ul className="space-y-4 text-gray-600 mb-8">
-              <li>Help & Support</li>
-              <li>Partner With Us</li>
-              <li>Ride With Us</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Help & Support</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Partner With Us</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Ride With Us</li>
             </ul>
 
             <h3 className="text-[20px] font-bold text-[#02060c] mb-4">Legal</h3>
             <ul className="space-y-4 text-gray-600">
-              <li>Terms & Conditions</li>
-              <li>Cookie Policy</li>
-              <li>Privacy Policy</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Terms & Conditions</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Cookie Policy</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Privacy Policy</li>
             </ul>
           </div>
 
@@ -73,17 +212,87 @@ export default function Footer() {
               Available in:
             </h3>
             <ul className="space-y-4 text-gray-600">
-              <li>Bangalore</li>
-              <li>Gurgaon</li>
-              <li>Hyderabad</li>
-              <li>Delhi</li>
-              <li>Mumbai</li>
-              <li>Pune</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Bangalore</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Gurgaon</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Hyderabad</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Delhi</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Mumbai</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Pune</li>
             </ul>
             <div className="mt-4">
               <select
                 aria-label="Available cities"
-                className="border rounded-xl px-4 py-2 bg-white cursor-pointer"
+                className="
+border
+rounded-xl
+px-4
+py-2
+bg-white
+cursor-pointer
+hover:border-[#ff5200]
+transition-all
+duration-300
+"
               >
                 <option>685 cities</option>
               </select>
@@ -96,38 +305,113 @@ export default function Footer() {
               Life at Swiggy
             </h3>
             <ul className="space-y-4 text-gray-600">
-              <li>Explore With Swiggy</li>
-              <li>Swiggy News</li>
-              <li>Snackables</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Explore With Swiggy</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Swiggy News</li>
+              <li
+  className="
+  cursor-pointer
+  hover:text-[#ff5200]
+  hover:translate-x-1
+  active:text-[#ff5200]
+  active:scale-90
+  transition-all
+  duration-300
+  "
+>Snackables</li>
             </ul>
 
             <h3 className="font-bold text-xl mt-10 mb-5 text-black">
               Social Links
             </h3>
             <div className="flex gap-5 text-2xl text-[#3d4152]">
-              <FaLinkedin className="cursor-pointer hover:text-[#ff5200] transition-colors" />
-              <FaInstagram className="cursor-pointer hover:text-[#ff5200] transition-colors" />
-              <FaFacebookF className="cursor-pointer hover:text-[#ff5200] transition-colors" />
-              <FaPinterestP className="cursor-pointer hover:text-[#ff5200] transition-colors" />
-              <FaTwitter className="cursor-pointer hover:text-[#ff5200] transition-colors" />
+              <FaLinkedin className="cursor-pointer hover:text-[#ff5200] hover:scale-125 active:text-[#ff5200] active:scale-90 transition-all duration-300" />
+              <FaInstagram className="cursor-pointer hover:text-[#ff5200] hover:scale-125 active:text-[#ff5200] active:scale-90 transition-all duration-300" />
+              <FaFacebookF className="cursor-pointer hover:text-[#ff5200] hover:scale-125 active:text-[#ff5200] active:scale-90 transition-all duration-300" />
+              <FaPinterestP className="cursor-pointer hover:text-[#ff5200] hover:scale-125 active:text-[#ff5200] active:scale-90 transition-all duration-300" />
+              <FaTwitter className="cursor-pointer hover:text-[#ff5200] hover:scale-125 active:text-[#ff5200] active:scale-90 transition-all duration-300" />
             </div>
           </div>
         </div>
 
         {/* App Download Banner */}
-        <div className="border-t border-gray-300 mt-14 pt-8 flex items-center justify-center gap-10">
-          <h2 className="text-[34px] font-bold text-[#3d4152]">
+        <div
+  className="
+  border-t
+  border-gray-300
+  mt-14
+  pt-8
+
+  flex
+  flex-col
+  lg:flex-row
+
+  items-center
+  justify-center
+
+  gap-6
+  lg:gap-10
+  "
+>
+          <h2
+  className="
+  text-2xl
+  md:text-[34px]
+  font-bold
+  text-[#3d4152]
+  text-center
+  "
+>
             For better experience, download the Swiggy app now
           </h2>
           <img
             src="/footer/app-store.png"
             alt="App Store"
-            className="h-16 cursor-pointer transform hover:scale-105 transition-transform"
+            className="
+h-14
+md:h-16
+cursor-pointer
+
+hover:scale-105
+active:scale-90
+
+transition-all
+duration-300
+"
           />
           <img
             src="/footer/google-play.png"
             alt="Google Play"
-            className="h-16 cursor-pointer transform hover:scale-105 transition-transform"
+            className="
+h-14
+md:h-16
+cursor-pointer
+
+hover:scale-105
+active:scale-90
+
+transition-all
+duration-300
+"
           />
         </div>
       </div>

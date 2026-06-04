@@ -39,25 +39,65 @@ const scrollRight = () => {
   });
 };
   return (
-    <section className="py-16 bg-[#fafafa] rounded-[32px]">
+    <section className="py-12 md:py-16 bg-[#fafafa] rounded-[32px] px-4">
       <div className="max-w-[1200px] mx-auto">
 
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-[34px] font-extrabold tracking-[-0.5px] text-black">
+          <h2
+  className="
+  text-2xl
+  md:text-[34px]
+  font-extrabold
+  tracking-[-0.5px]
+  text-black
+  "
+>
             Discover best restaurants on Dineout
           </h2>
 
           <div className="flex gap-3">
             <button
   onClick={scrollLeft}
-  className="w-12 h-12 rounded-full bg-gray-200 text-black flex items-center justify-center"
+  className="
+w-10
+h-10
+md:w-12
+md:h-12
+rounded-full
+bg-gray-200
+text-black
+flex
+items-center
+justify-center
+cursor-pointer
+hover:bg-gray-300
+active:bg-gray-400
+active:scale-95
+transition-all
+"
 >
               <FiArrowLeft />
             </button>
 
             <button
   onClick={scrollRight}
-  className="w-12 h-12 rounded-full bg-gray-200 text-black flex items-center justify-center"
+    className="
+w-10
+h-10
+md:w-12
+md:h-12
+rounded-full
+bg-gray-200
+text-black
+flex
+items-center
+justify-center
+cursor-pointer
+hover:bg-gray-300
+active:bg-gray-400
+active:scale-95
+transition-all
+"
 >
               <FiArrowRight />
             </button>
@@ -66,7 +106,15 @@ const scrollRight = () => {
 
         <div
   ref={sliderRef}
-  className="flex gap-8 overflow-x-hidden pb-4 scroll-smooth"
+  className="
+flex
+gap-4
+md:gap-8
+overflow-x-auto
+pb-4
+scroll-smooth
+scrollbar-hide
+"
 >
           {restaurants.map((restaurant) => (
             <DineoutCard

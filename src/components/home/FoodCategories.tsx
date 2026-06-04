@@ -36,11 +36,11 @@ const scrollRight = () => {
   }, []);
 
   return (
-    <section className="pt-16 pb-12">
+    <section className="pt-12 md:pt-16 pb-12 px-4">
       <div className="max-w-[1200px] mx-auto">
 
 <div className="flex justify-between items-center mb-8">
-  <h2 className="text-3xl font-bold text-black">
+  <h2 className="text-2xl md:text-3xl font-bold text-black">
     What's on your mind?
   </h2>
 
@@ -49,7 +49,24 @@ const scrollRight = () => {
   onClick={scrollLeft}
   title="Scroll left"
   aria-label="Scroll left"
-  className="w-12 h-12 rounded-full bg-gray-200 text-black flex items-center justify-center"
+className="
+w-10
+h-10
+md:w-12
+md:h-12
+rounded-full
+bg-gray-200
+text-black
+flex
+items-center
+justify-center
+cursor-pointer
+hover:bg-gray-300
+active:bg-gray-400
+active:scale-95
+transition-all
+duration-150
+"
 >
   <FiArrowLeft size={20} />
 </button>
@@ -58,7 +75,24 @@ const scrollRight = () => {
   onClick={scrollRight}
   title="Scroll right"
   aria-label="Scroll right"
-  className="w-12 h-12 rounded-full bg-gray-200 text-black flex items-center justify-center"
+className="
+w-10
+h-10
+md:w-12
+md:h-12
+rounded-full
+bg-gray-200
+text-black
+flex
+items-center
+justify-center
+cursor-pointer
+hover:bg-gray-300
+active:bg-gray-400
+active:scale-95
+transition-all
+duration-150
+"
 >
   <FiArrowRight size={20} />
 </button>
@@ -67,23 +101,45 @@ const scrollRight = () => {
 
         <div
   ref={sliderRef}
-  className="flex gap-8 overflow-x-hidden scroll-smooth"
+  className="
+flex
+gap-4
+md:gap-8
+overflow-x-auto
+scroll-smooth
+scrollbar-hide
+"
 >
 
 {categories.map((category) => (
 <div
   key={category.id}
-  className="flex flex-col items-center min-w-[180px]"
+  className="
+  flex
+  flex-col
+  items-center
+  min-w-[120px]
+  md:min-w-[180px]
+  cursor-pointer
+  transition-all
+  duration-300
+  hover:scale-105
+"
 >
   <Image
     src={category.image}
     alt={category.name}
-    width={160}
-    height={160}
-    className="object-contain"
+    width={140}
+    height={140}
+    className="
+    object-contain
+    transition-transform
+    duration-300
+    group-hover:scale-105
+    "
   />
 
-  <p className="text-2xl mt-2 text-gray-800">
+  <p className="text-base md:text-2xl mt-2 text-gray-800 text-center">
     {category.name}
   </p>
 </div>

@@ -25,13 +25,18 @@ useEffect(() => {
 {hero.leftImage && (
   <img
     src={hero.leftImage}
+    loading="lazy"
     alt="Left Hero"
-    className="
-    absolute
-    left-[-120px]
-    top-[-40px]
-    w-[260px]
-    "
+className="
+hidden
+lg:block
+absolute
+left-[-60px]
+top-[40px]
+w-[220px]
+pointer-events-none
+select-none
+"
   />
 )}
 
@@ -40,17 +45,35 @@ useEffect(() => {
 {hero.rightImage && (
   <img
     src={hero.rightImage}
+    loading="lazy"
     alt="Right Hero"
-    className="
-    absolute
-    right-[-120px]
-    top-[-40px]
-    w-[260px]
-    "
+className="
+hidden
+lg:block
+absolute
+right-[-60px]
+top-[40px]
+w-[220px]
+pointer-events-none
+select-none
+"
   />
 )}
 
-  <h1 className="text-center text-white text-6xl font-bold leading-tight max-w-4xl mx-auto">
+  <h1
+  className="
+  text-center
+  text-white
+  text-4xl
+  md:text-5xl
+  lg:text-6xl
+  font-bold
+  leading-tight
+  max-w-4xl
+  mx-auto
+  px-4
+  "
+>
     {hero.heading}
   </h1>
 
