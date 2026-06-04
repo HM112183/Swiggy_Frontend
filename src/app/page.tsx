@@ -7,10 +7,15 @@ import AppBanner from "@/components/home/AppBanner";
 import DineoutSection from "@/components/home/DineoutSection";
 import CitySections from "@/components/home/CitySections";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 export default function Home() {
   return (
-<main className="bg-white">
+    <>
+      <ScrollToTop />
+
+      <main className="bg-white">
 <div className="bg-[#ff5200] pb-20 overflow-hidden">
   <Navbar />
   <Hero />
@@ -24,7 +29,7 @@ export default function Home() {
      <CitySections /> 
      <Footer />
   </div>
-</main>
-
+      </main>
+    </>
   );
 }
