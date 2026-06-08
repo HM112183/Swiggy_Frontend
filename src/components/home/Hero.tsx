@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect,useState,useCallback,useRef,} from "react";
 import { api } from "@/services/api";
 import { FiMapPin, FiSearch } from "react-icons/fi";
 
@@ -10,12 +10,18 @@ export default function Hero() {
     leftImage: "",
     rightImage: "",
   });
+const headingRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    api.get("/home/hero").then((res) => {
-      setHero(res.data);
-    });
-  }, []);
+
+const fetchHero = useCallback(async () => {
+  const res = await api.get("/home/hero");
+  setHero(res.data);
+}, []);
+
+
+useEffect(() => {
+  fetchHero();
+}, [fetchHero]);
 
   return (
     <div className="relative">
@@ -57,7 +63,8 @@ export default function Hero() {
         />
       )}
 
-      <h1
+<h1
+  ref={headingRef}
         className="
           text-center
           text-white

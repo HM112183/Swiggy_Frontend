@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { api } from "@/services/api";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -12,18 +12,22 @@ interface Service {
 }
 
 export default function ServiceCards() {
-  const [services, setServices] = useState<Service[]>([]);
 
-  useEffect(() => {
-    api.get("/home/services").then((res) => {
-      setServices(res.data);
-    });
+  const [services, setServices] = useState<Service[]>([]);
+  const serviceList = useMemo(() => services, [services]);
+  const fetchServices = useCallback(async () => {
+    const res = await api.get("/home/services");
+    setServices(res.data);
   }, []);
+
+useEffect(() => {
+  fetchServices();
+}, [fetchServices]);
 
   return (
     <section className="max-w-[1200px] mx-auto mt-12 md:mt-16 px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {services.map((service) => (
+        {serviceList.map((service) => (
           <div
             key={service.id}
             className="

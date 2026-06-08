@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect,useState,useCallback,useMemo,} from "react";
 import { api } from "@/services/api";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -12,11 +12,32 @@ interface CityData {
 export default function CitySections() {
   const [data, setData] = useState<CityData | null>(null);
 
-  useEffect(() => {
-    api.get("/home/cities").then((res) => {
-      setData(res.data);
-    });
-  }, []);
+  const [showAllFood, setShowAllFood] = useState(false);
+
+  const [showAllGrocery, setShowAllGrocery] = useState(false);
+
+  const fetchCities = useCallback(async () => {
+  const res = await api.get("/home/cities");
+  setData(res.data);
+}, []);
+
+useEffect(() => {
+  fetchCities();
+}, [fetchCities]);
+
+const foodCities = useMemo(() => {
+  if (!data) return [];
+  return showAllFood
+    ? data.foodDelivery
+    : data.foodDelivery.slice(0, 7);
+}, [data, showAllFood]);
+
+const groceryCities = useMemo(() => {
+  if (!data) return [];
+  return showAllGrocery
+    ? data.groceryDelivery
+    : data.groceryDelivery.slice(0, 7);
+}, [data, showAllGrocery]);
 
   if (!data) return null;
 
@@ -48,6 +69,7 @@ export default function CitySections() {
         >
           {data.foodDelivery.map((city) => (
             <button
+              onClick={() => setShowAllFood(!showAllFood)}
               key={city}
               className="
                 h-[68px]
@@ -103,7 +125,7 @@ export default function CitySections() {
               active:border-[#ff5200]
             "
           >
-            Show More
+            {showAllFood ? "Show Less" : "Show More"}
             <FiChevronDown size={18} />
           </button>
         </div>
@@ -132,6 +154,7 @@ export default function CitySections() {
         >
           {data.groceryDelivery.map((city) => (
             <button
+              onClick={() => setShowAllGrocery(!showAllGrocery)}
               key={city}
               className="
                 h-[68px]
@@ -187,7 +210,7 @@ export default function CitySections() {
               active:border-[#ff5200]
             "
           >
-            Show More
+            {showAllGrocery ? "Show Less" : "Show More"}
             <FiChevronDown size={18} />
           </button>
         </div>

@@ -2,13 +2,26 @@
 
 import LoginDrawer from "../auth/LoginDrawer";
 import { FiArrowUpRight } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+
   const [openLogin, setOpenLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
   let menuTimer: NodeJS.Timeout;
+
+const openLoginDrawer = useCallback(() => {
+  setOpenLogin(true);
+}, []);
+
+const handleLogout = useCallback(() => {
+  localStorage.removeItem("loggedIn");
+  setIsLoggedIn(false);
+  setShowMenu(false);
+}, []);
 
   useEffect(() => {
     const loggedIn = localStorage.getItem("loggedIn");
@@ -91,7 +104,7 @@ export default function Navbar() {
 
           {!isLoggedIn ? (
             <button
-              onClick={() => setOpenLogin(true)}
+              onClick={openLoginDrawer}
               className="
                 bg-black
                 text-white
@@ -159,7 +172,10 @@ export default function Navbar() {
                   "
                 >
                   <button
-                    onClick={() => setShowMenu(false)}
+                      onClick={() => {
+                        router.push("/profile");
+                        setShowMenu(false);
+                      }}
                     className="
                       w-full
                       text-left
@@ -175,7 +191,10 @@ export default function Navbar() {
                   </button>
 
                   <button
-                    onClick={() => setShowMenu(false)}
+                      onClick={() => {
+                        router.push("/profile");
+                        setShowMenu(false);
+                      }}
                     className="
                       w-full
                       text-left
@@ -190,8 +209,11 @@ export default function Navbar() {
                     Orders
                   </button>
 
-                  <button
-                    onClick={() => setShowMenu(false)}
+                        <button
+                          onClick={() => {
+                            router.push("/profile");
+                            setShowMenu(false);
+                          }}
                     className="
                       w-full
                       text-left
@@ -206,8 +228,11 @@ export default function Navbar() {
                     Swiggy One
                   </button>
 
-                  <button
-                    onClick={() => setShowMenu(false)}
+                    <button
+                      onClick={() => {
+                        router.push("/profile");
+                        setShowMenu(false);
+                      }}
                     className="
                       w-full
                       text-left
@@ -223,11 +248,7 @@ export default function Navbar() {
                   </button>
 
                   <button
-                    onClick={() => {
-                      localStorage.removeItem("loggedIn");
-                      setIsLoggedIn(false);
-                      setShowMenu(false);
-                    }}
+                    onClick={handleLogout}
                     className="w-full text-left px-6 py-3 hover:bg-gray-100 text-red-500"
                   >
                     Logout

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useCallback,useRef, useMemo } from "react";
 import { api } from "@/services/api";
 import Image from "next/image";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -15,26 +15,33 @@ export default function FoodCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
+  const scrollLeft = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: -400,
       behavior: "smooth",
     });
-  };
+  }, []);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: 400,
       behavior: "smooth",
     });
-  };
-
-  useEffect(() => {
-    api.get("/home/grocery-categories").then((res) => {
-      console.log(res.data);
-      setCategories(res.data);
-    });
   }, []);
+
+const fetchCategories = useCallback(async () => {
+  const res = await api.get("/home/grocery-categories");
+  setCategories(res.data);
+}, []);
+
+useEffect(() => {
+  fetchCategories();
+}, [fetchCategories]);
+
+const categoryList = useMemo(
+  () => categories,
+  [categories]
+);
 
   return (
     <section className="bg-white py-12 px-4">
@@ -106,19 +113,20 @@ export default function FoodCategories() {
             scrollbar-hide
           "
         >
-          {categories.map((category) => (
+          {categoryList.map((category) => (
             <div
               key={category.id}
               className="
-                flex
-                flex-col
-                items-center
-                min-w-[120px]
-                md:min-w-[180px]
-                cursor-pointer
-                transition-all
-                duration-300
-                hover:scale-105
+              group
+              flex
+              flex-col
+              items-center
+              min-w-[120px]
+              md:min-w-[180px]
+              cursor-pointer
+              transition-all
+              duration-300
+              hover:scale-105
               "
             >
               <Image
@@ -126,7 +134,7 @@ export default function FoodCategories() {
                 alt={category.name}
                 width={140}
                 height={140}
-                className="object-contain"
+                className="object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <p className="text-base md:text-2xl mt-2 text-gray-800 text-center">
                 {category.name}

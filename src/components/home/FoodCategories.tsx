@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect,useState,useRef,useCallback, useMemo,} from "react";
 import { api } from "@/services/api";
 import Image from "next/image";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -15,25 +15,33 @@ export default function FoodCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
+  const scrollLeft = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: -400,
       behavior: "smooth",
     });
-  };
+  }, []);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: 400,
       behavior: "smooth",
     });
-  };
-
-  useEffect(() => {
-    api.get("/home/food-categories").then((res) => {
-      setCategories(res.data);
-    });
   }, []);
+
+  const fetchCategories = useCallback(async () => {
+  const res = await api.get("/home/food-categories");
+  setCategories(res.data);
+}, []);
+
+useEffect(() => {
+  fetchCategories();
+}, [fetchCategories]);
+
+const categoryList = useMemo(
+  () => categories,
+  [categories]
+);
 
   return (
     <section className="pt-12 md:pt-16 pb-12 px-4">
@@ -109,10 +117,11 @@ export default function FoodCategories() {
             scrollbar-hide
           "
         >
-          {categories.map((category) => (
+          {categoryList.map((category) => (
             <div
               key={category.id}
-              className="
+                className="
+                group
                 flex
                 flex-col
                 items-center
@@ -122,7 +131,7 @@ export default function FoodCategories() {
                 transition-all
                 duration-300
                 hover:scale-105
-              "
+                "
             >
               <Image
                 src={category.image}

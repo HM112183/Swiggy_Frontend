@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect,useState,useCallback, useMemo,} from "react";
 import { api } from "../../services/api";
 import Image from "next/image";
 
@@ -13,11 +13,16 @@ interface BannerData {
 export default function AppBanner() {
   const [banner, setBanner] = useState<BannerData | null>(null);
 
-  useEffect(() => {
-    api.get("/home/app-banner").then((res) => {
-      setBanner(res.data);
-    });
-  }, []);
+  const fetchBanner = useCallback(async () => {
+  const res = await api.get("/home/app-banner");
+  setBanner(res.data);
+}, []);
+
+useEffect(() => {
+  fetchBanner();
+}, [fetchBanner]);
+
+const bannerData = useMemo(() => banner, [banner]);
 
   if (!banner) return null;
 
@@ -58,17 +63,17 @@ export default function AppBanner() {
                   mb-4
                 "
               >
-                {banner.title}
+                {bannerData?.title}
               </h2>
 
               <p className="text-gray-400 text-base md:text-lg lg:text-xl">
-                {banner.subtitle}
+                {bannerData?.subtitle}
               </p>
             </div>
 
             <div className="flex justify-center lg:justify-end w-full">
               <Image
-                src={banner.bannerImage}
+                src={bannerData?.bannerImage || ""}
                 alt="Swiggy App"
                 width={520}
                 height={320}

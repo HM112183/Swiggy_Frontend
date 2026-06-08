@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import {useEffect,useState,useRef,useCallback,useMemo,} from "react";
 import { api } from "@/services/api";
 import DineoutCard from "@/components/dineout/DineoutCard";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -21,25 +21,33 @@ export default function DineoutSection() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    api.get("/home/dineout-restaurants").then((res) => {
-      setRestaurants(res.data);
-    });
-  }, []);
+  const fetchRestaurants = useCallback(async () => {
+  const res = await api.get("/home/dineout-restaurants");
+  setRestaurants(res.data);
+}, []);
 
-  const scrollLeft = () => {
+useEffect(() => {
+  fetchRestaurants();
+}, [fetchRestaurants]);
+
+  const scrollLeft = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: -450,
       behavior: "smooth",
     });
-  };
+  }, []);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     sliderRef.current?.scrollBy({
       left: 450,
       behavior: "smooth",
     });
-  };
+  }, []);
+
+  const restaurantList = useMemo(
+  () => restaurants,
+  [restaurants]
+);
 
   return (
     <section className="py-12 md:py-16 bg-[#fafafa] rounded-[32px] px-4">
@@ -118,7 +126,7 @@ export default function DineoutSection() {
             scrollbar-hide
           "
         >
-          {restaurants.map((restaurant) => (
+          {restaurantList.map((restaurant) => (
             <DineoutCard
               key={restaurant.id}
               {...restaurant}

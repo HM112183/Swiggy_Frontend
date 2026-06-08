@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { memo } from "react";
 
 interface Props {
   image: string;
@@ -12,7 +13,7 @@ interface Props {
   offer: string;
 }
 
-export default function DineoutCard({
+function DineoutCard({
   image,
   name,
   rating,
@@ -106,4 +107,4 @@ export default function DineoutCard({
       </div>
     </div>
   );
-}
+} export default memo(DineoutCard);
