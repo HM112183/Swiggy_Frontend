@@ -4,6 +4,7 @@ import { useEffect,useState,useRef,useCallback, useMemo,} from "react";
 import { api } from "@/services/api";
 import Image from "next/image";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { useCart } from "@/context/CartContext";
 
 interface Category {
   id: number;
@@ -14,6 +15,7 @@ interface Category {
 export default function FoodCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { addItem } = useCart();
 
   const scrollLeft = useCallback(() => {
     sliderRef.current?.scrollBy({
@@ -118,8 +120,11 @@ const categoryList = useMemo(
           "
         >
           {categoryList.map((category) => (
-            <div
-              key={category.id}
+              <div
+                key={category.id}
+                onClick={() =>
+                  addItem(category.name)
+                }
                 className="
                 group
                 flex
@@ -131,8 +136,9 @@ const categoryList = useMemo(
                 transition-all
                 duration-300
                 hover:scale-105
+                active:scale-95
                 "
-            >
+              >
               <Image
                 src={category.image}
                 alt={category.name}

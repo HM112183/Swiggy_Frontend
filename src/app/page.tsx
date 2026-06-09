@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 
+
 export default function Home() {
   return (
     <>

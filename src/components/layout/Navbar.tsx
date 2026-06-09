@@ -2,13 +2,17 @@
 
 import LoginDrawer from "../auth/LoginDrawer";
 import { FiArrowUpRight } from "react-icons/fi";
-import { useEffect, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
-
-  const [openLogin, setOpenLogin] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const { isLoggedIn, logout } = useAuth();
+const { count, items } = useCart(); 
+const [openLogin, setOpenLogin] = useState(false);
+  
+  const [showCart, setShowCart] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
   let menuTimer: NodeJS.Timeout;
@@ -18,17 +22,16 @@ const openLoginDrawer = useCallback(() => {
 }, []);
 
 const handleLogout = useCallback(() => {
-  localStorage.removeItem("loggedIn");
-  setIsLoggedIn(false);
+  logout();
   setShowMenu(false);
-}, []);
+}, [logout]);
 
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("loggedIn");
-    if (loggedIn === "true") {
-      setIsLoggedIn(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const loggedIn = localStorage.getItem("loggedIn");
+  //   if (loggedIn === "true") {
+  //     setIsLoggedIn(true);
+  //   }
+  // }, []);
 
   return (
     <nav className="w-full">
@@ -101,7 +104,103 @@ const handleLogout = useCallback(() => {
             <span className="hidden sm:inline">Get the App</span>
             <FiArrowUpRight />
           </a>
+<div
+  className="relative"
+  onMouseEnter={() => {
+    if (window.innerWidth >= 768) {
+      setShowCart(true);
+    }
+  }}
+  onMouseLeave={() => {
+    if (window.innerWidth >= 768) {
+      setShowCart(false);
+    }
+  }}
+>
+  <button
+    onClick={() => setShowCart(!showCart)}
+className="
+relative
+text-white
+cursor-pointer
+flex
+items-center
+gap-2
+font-medium
+transition-all
+duration-300
+hover:scale-105
+hover:text-yellow-200
+"
+  >
+    🛒
 
+    <span className="hidden md:inline">
+      Cart
+    </span>
+
+    <span
+      className="
+      absolute
+      -top-2
+      -right-3
+      bg-black
+      text-white
+      text-xs
+      min-w-[20px]
+      h-5
+      px-1
+      rounded-full
+      flex
+      items-center
+      justify-center
+      "
+    >
+      {count}
+    </span>
+  </button>
+
+  {showCart && (
+    <div
+      className="
+      absolute
+      top-10
+      right-0
+      w-64
+      bg-white
+      rounded-xl
+      shadow-xl
+      p-4
+      z-50
+      "
+    >
+      <h3 className="font-bold text-black mb-3">
+        Cart Items
+      </h3>
+
+      {items.length === 0 ? (
+        <p className="text-gray-500">
+          Cart is empty
+        </p>
+      ) : (
+        <ul className="space-y-2">
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className="
+              text-[#3d4152]
+              border-b
+              pb-2
+              "
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )}
+</div>
           {!isLoggedIn ? (
             <button
               onClick={openLoginDrawer}
@@ -129,25 +228,31 @@ const handleLogout = useCallback(() => {
             </button>
           ) : (
             <div
-              className="relative"
-              onMouseEnter={() => {
-                clearTimeout(menuTimer);
-                setShowMenu(true);
-              }}
-            >
+  className="relative"
+  onMouseEnter={() => {
+    if (window.innerWidth >= 768) {
+      clearTimeout(menuTimer);
+      setShowMenu(true);
+    }
+  }}
+>
               <button
                 onClick={() => setShowMenu(!showMenu)}
-                className="
-                  w-12
-                  h-12
-                  rounded-full
-                  bg-[#f0f0f5]
-                  text-[#3d4152]
-                  flex
-                  items-center
-                  justify-center
-                  cursor-pointer
-                "
+className="
+w-12
+h-12
+rounded-full
+bg-[#f0f0f5]
+text-[#3d4152]
+flex
+items-center
+justify-center
+cursor-pointer
+transition-all
+duration-300
+hover:scale-110
+hover:shadow-lg
+"
               >
                 👤
               </button>
@@ -155,10 +260,12 @@ const handleLogout = useCallback(() => {
               {showMenu && (
                 <div
                   onMouseLeave={() => {
-                    menuTimer = setTimeout(() => {
-                      setShowMenu(false);
-                    }, 200);
-                  }}
+  if (window.innerWidth >= 768) {
+    menuTimer = setTimeout(() => {
+      setShowMenu(false);
+    }, 200);
+  }
+}}
                   className="
                     absolute
                     top-14
@@ -184,7 +291,10 @@ const handleLogout = useCallback(() => {
                       text-[#3d4152]
                       font-medium
                       hover:bg-gray-100
-                      cursor-pointer
+hover:pl-8
+transition-all
+duration-300
+cursor-pointer
                     "
                   >
                     Profile
@@ -203,7 +313,10 @@ const handleLogout = useCallback(() => {
                       text-[#3d4152]
                       font-medium
                       hover:bg-gray-100
-                      cursor-pointer
+hover:pl-8
+transition-all
+duration-300
+cursor-pointer
                     "
                   >
                     Orders
@@ -222,7 +335,10 @@ const handleLogout = useCallback(() => {
                       text-[#3d4152]
                       font-medium
                       hover:bg-gray-100
-                      cursor-pointer
+hover:pl-8
+transition-all
+duration-300
+cursor-pointer
                     "
                   >
                     Swiggy One
@@ -241,7 +357,10 @@ const handleLogout = useCallback(() => {
                       text-[#3d4152]
                       font-medium
                       hover:bg-gray-100
-                      cursor-pointer
+hover:pl-8
+transition-all
+duration-300
+cursor-pointer
                     "
                   >
                     Favourites
